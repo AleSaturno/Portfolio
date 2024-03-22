@@ -502,6 +502,8 @@ html{
     height: 200px;
     display: block;
     padding-left: auto;
+    border: 3px solid #1CB698;
+   
 }
 .portfolio .galeria .proyecto .overlay{
     position: absolute;
