@@ -12,7 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="shortcut icon" href="img/portafolio.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/portafolio.png" type="image/x-icon" />
   </head>
   <body>
     <!-- MENU ENCABEZADO  -->
@@ -23,15 +23,15 @@
         </div>
         <nav id="nav">
           <ul>
-            <li><a href="#inicio">INICIO</a></li>
-            <li><a href="#sobremi">SOBRE MI</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#curriculum">CURRICULUM</a></li>
-            <li><a href="#portfolio">PORTFOLIO </a></li>
-            <li><a href="#contacto">CONTACTO</a></li>
+            <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+            <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+            <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
+            <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+            <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO </a></li>
+            <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
           </ul>
         </nav>
-        <div class="nav-responsive">
+        <div class="nav-responsive" onclick="mostrarOcultarMenu()">
           <i class="fa-solid fa-bars"></i>
         </div>
       </header>
@@ -283,9 +283,7 @@
               <h4>Servicio Técnico IT</h4>
               <span class="casa">CloudMax Argentina</span>
               <span class="fecha">2018 - 2022</span>
-              <p>
-                Instalación y Mantenimiento de Servidores
-              </p>
+              <p>Instalación y Mantenimiento de Servidores.</p>
               <div class="conectord">
                 <div class="circulod"></div>
               </div>
@@ -294,9 +292,7 @@
               <h4>Atención al Cliente</h4>
               <span class="casa">Click Tienda Tecno</span>
               <span class="fecha">2023</span>
-              <p>
-                Compra & Venta de articulos tecnologicos
-              </p>
+              <p>Compra & Venta de articulos tecnologicos.</p>
               <div class="conectord">
                 <div class="circulod"></div>
               </div>
@@ -305,9 +301,7 @@
               <h4>Front Developer</h4>
               <span class="casa">LaPilcha APP(PROYECTO GRUPAL)</span>
               <span class="fecha">2023</span>
-              <p>
-                Proyecto e-commerce que ofrece una tienda de ropa en línea.
-              </p>
+              <p>Proyecto Front-End de e-commerce, que ofrece una tienda de ropa en línea.</p>
               <div class="conectord">
                 <div class="circulod"></div>
               </div>
@@ -317,6 +311,126 @@
       </div>
     </section>
 
+    <!-- SECCION PORTFOLIO -->
+    <section id="portfolio" class="portfolio">
+      <div class="contenido-seccion">
+        <h2>PORTFOLIO</h2>
+        <div class="galeria">
+          <div class="proyecto">
+            <img src="img/imagen1.jpg" alt=""/>
+            <div class="overlay">
+              <h3>Login de Soda Stereo</h3>
+              <p>Primer Login</p>
+            </div>
+          </div>
+          <div class="proyecto">
+            <img src="img/imagen2.jpg" alt="" />
+            <div class="overlay">
+              <h3>Inicio de la página</h3>
+              <p>Primera página</p>
+            </div>
+          </div>
+          <div class="proyecto">
+            <img src="img/imagen3.png" alt="" />
+            <div class="overlay">
+              <h3>VIDEOGAMES</h3>
+              <p>App de videojuegos</p>
+            </div>
+          </div>
+          <div class="proyecto">
+            <img src="img/imagen4.png" alt="" />
+            <div class="overlay">
+              <h3>LaPilcha</h3>
+              <p>E-Commerce</p>
+            </div>
+          </div>
+          <div class="proyecto">
+            <img src="img/imagen5.jpg" alt="" />
+            <div class="overlay">
+              <h3>Formulario</h3>
+              <p>Encuesta</p>
+            </div>
+          </div>
+          <div class="proyecto">
+            <img src="img/imagen6.jpg" alt="" />
+            <div class="overlay">
+              <h3>Creación de tareas</h3>
+              <p>Aplicación FullStack</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECCION CONTACTO -->
+    <section id="contacto" class="contacto">
+      <div class="contenido-seccion">
+        <h2>CONTACTO</h2>
+        <div class="fila">
+          <!-- Formulario -->
+          <div class="col">
+            <input type="text" placeholder="Tú Nombre" />
+            <input type="text" placeholder="Número telefónico" />
+            <input type="text" placeholder="Dirección de correo" />
+            <input type="text" placeholder="Tema" />
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Mensaje"
+            ></textarea>
+            <button>
+              Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+              <samp class="overlay"></samp>
+            </button>
+          </div>
+          <!-- Mapa -->
+          <div class="col">
+            <img src="img/ubicacion.png" alt="">
+            <div class="info">
+              <ul>
+                <li>
+                  <i class="fa-solid fa-location-dot"></i>
+                  Antonio Arcos 2641, Cordoba Arg
+                </li>
+                <li>
+                  <i class="fa-solid fa-mobile-screen"></i>
+                 Llamanos: +54 9 3516845660
+                </li>
+                <li>
+                  <i class="fa-solid fa-envelope"></i>
+                  Email: alesaturno64@gmail.com
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECCION FOOTER -->
+    <footer>
+      <a href="#inicio" class="arriba">
+        <i class="fa-solid fa-angles-up"></i>
+      </a>
+      <div class="redes">
+        <a href="https://www.facebook.com/ale.saturno.1/" target="_blank"
+          ><i class="fa-brands fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com/alesaturno64/" target="_blank"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/alejandro-saturno-1b5967206/"
+          target="_blank"
+          ><i class="fa-brands fa-linkedin-in"></i
+        ></a>
+        <a href="https://github.com/AleSaturno" target="_blank"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
+    </footer>
+
+    </section>
     <script src="index.js"></script>
   </body>
 </html>
