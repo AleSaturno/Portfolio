@@ -34,6 +34,7 @@ const efectoHabilidades = () =>{
         habilidades[6].classList.add('trabajoenequipo');
         habilidades[7].classList.add('creactividad');
         habilidades[8].classList.add('dedicacion');
+        habilidades[9].classList.add('proactivo');
         
     }
 }
