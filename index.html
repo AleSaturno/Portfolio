@@ -290,7 +290,7 @@
             <div class="item der">
               <h4>Front Developer</h4>
               <span class="casa">Media Orange</span>
-              <span class="fecha">2024(Actualidad)</span>
+              <span class="fecha">2024</span>
               <p>Desarrollo Front/Creación y envios de correos.</p>
               <div class="conectord">
                 <div class="circulod"></div>
@@ -384,24 +384,19 @@
     <section id="contacto" class="contacto">
       <div class="contenido-seccion">
         <h2>CONTACTO</h2>
-        <div class="fila">
-          <!-- Formulario -->
-          <div class="col">
-            <input type="text" placeholder="Tú Nombre" />
-            <input type="text" placeholder="Número telefónico" />
-            <input type="text" placeholder="Dirección de correo" />
-            <input type="text" placeholder="Tema" />
-            <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="Mensaje"
-            ></textarea>
-            <button>
-              Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
-              <samp class="overlay"></samp>
-            </button>
+    <div class="fila">
+      <div class="col">
+        <form id="contact-form" action="/api/contact" method="POST">
+          <input type="text" name="nombre" placeholder="Tu Nombre" required />
+          <input type="text" name="telefono" placeholder="Número telefónico" required />
+          <input type="email" name="email" placeholder="Dirección de correo" required />
+          <input type="text" name="tema" placeholder="Tema" required />
+          <textarea name="mensaje" cols="30" rows="10" placeholder="Mensaje" required></textarea>
+          <button type="submit">Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+            <samp class="overlay"></samp>
+          
+          </button>
+        </form>
           </div>
           <!-- Mapa -->
           <div class="col">
