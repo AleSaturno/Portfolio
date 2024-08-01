@@ -647,7 +647,15 @@ html{
 #statusMessage.hidden {
     display: none;
 }
+#statusMessage.sending {
+    background-color: #f0f0f0;
+    color: #333;
+}
 
+.contacto .fila .col form button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
 
 
 

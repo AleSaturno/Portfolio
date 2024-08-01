@@ -57,10 +57,20 @@ document.getElementById('descargarCv').addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     const statusMessage = document.getElementById('statusMessage');
+    const submitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
 
-    if (contactForm) {
+    if (contactForm && submitButton) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Deshabilitar el botón y mostrar "Enviando..."
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Enviando... <i class="fa-solid fa-spinner fa-spin"></i>';
+            
+            // Mostrar mensaje de "Enviando..."
+            statusMessage.innerHTML = '<p>Enviando mensaje, por favor espere...</p>';
+            statusMessage.classList.remove('hidden', 'success', 'error');
+            statusMessage.classList.add('sending');
 
             fetch(contactForm.action, {
                 method: 'POST',
@@ -70,26 +80,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }).then(response => {
                 if (response.ok) {
-                    // Mostrar mensaje de éxito
                     statusMessage.innerHTML = '<p>¡Mensaje enviado con éxito! Te contactaré pronto.</p>';
-                    statusMessage.classList.remove('hidden');
+                    statusMessage.classList.remove('sending');
                     statusMessage.classList.add('success');
-
-                    // Limpiar el formulario
                     contactForm.reset();
-
-                    // Después de 5 segundos, ocultar el mensaje
-                    setTimeout(() => {
-                        statusMessage.classList.add('hidden');
-                    }, 5000);
                 } else {
                     throw new Error('Error en el envío del formulario');
                 }
             }).catch(error => {
-                // Mostrar mensaje de error
                 statusMessage.innerHTML = '<p>Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.</p>';
-                statusMessage.classList.remove('hidden');
+                statusMessage.classList.remove('sending');
                 statusMessage.classList.add('error');
+            }).finally(() => {
+                // Restaurar el botón
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>';
+                
+                // Ocultar el mensaje después de 5 segundos
+                setTimeout(() => {
+                    statusMessage.classList.add('hidden');
+                }, 5000);
             });
         });
     }
