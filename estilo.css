@@ -627,6 +627,32 @@ html{
     display: inline-block;
     margin-right: 20px;
 }
+#statusMessage {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+#statusMessage.success {
+    background-color: #1CB698;
+    color: #fff;
+}
+
+#statusMessage.error {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+#statusMessage.hidden {
+    display: none;
+}
+
+
+
+
+
+
 /* SECCION F O O T E R */
 footer{
     background-color: #252A2E;
