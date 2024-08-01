@@ -53,3 +53,44 @@ document.getElementById('descargarCv').addEventListener('click', () => {
     a.click();
     document.body.removeChild(a);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const statusMessage = document.getElementById('statusMessage');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Mostrar mensaje de éxito
+                    statusMessage.innerHTML = '<p>¡Mensaje enviado con éxito! Te contactaré pronto.</p>';
+                    statusMessage.classList.remove('hidden');
+                    statusMessage.classList.add('success');
+
+                    // Limpiar el formulario
+                    contactForm.reset();
+
+                    // Después de 5 segundos, ocultar el mensaje
+                    setTimeout(() => {
+                        statusMessage.classList.add('hidden');
+                    }, 5000);
+                } else {
+                    throw new Error('Error en el envío del formulario');
+                }
+            }).catch(error => {
+                // Mostrar mensaje de error
+                statusMessage.innerHTML = '<p>Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.</p>';
+                statusMessage.classList.remove('hidden');
+                statusMessage.classList.add('error');
+            });
+        });
+    }
+});
