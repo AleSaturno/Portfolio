@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm && submitButton) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            console.log('Formulario enviado');
 
             // Deshabilitar el botón y mostrar "Enviando..."
             submitButton.disabled = true;
@@ -80,13 +81,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     'Accept': 'application/json'
                 }
             }).then(response => {
+                console.log('Tipo de respuesta:', response.headers.get('content-type'));
                 if (response.ok) {
-                    return response.json();
+                    // Asumimos que una respuesta OK significa que el mensaje se envió correctamente
+                    return { success: true };
                 } else {
                     throw new Error('Error en el envío del formulario');
                 }
             }).then(data => {
-                if (data.success === 'true') {
+                if (data.success) {
                     statusMessage.innerHTML = '<p>¡Mensaje enviado con éxito! Te contactaré pronto.</p>';
                     statusMessage.classList.remove('sending');
                     statusMessage.classList.add('success');
@@ -95,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error('Error en el envío del formulario');
                 }
             }).catch(error => {
-                console.error('Error:', error);
+                console.error('Error detallado:', error);
                 statusMessage.innerHTML = '<p>Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.</p>';
                 statusMessage.classList.remove('sending');
                 statusMessage.classList.add('error');
@@ -110,5 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 5000);
             });
         });
+    } else {
+        console.error('Elementos del formulario no encontrados');
     }
 });
