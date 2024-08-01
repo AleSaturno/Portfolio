@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             statusMessage.classList.remove('hidden', 'success', 'error');
             statusMessage.classList.add('sending');
 
+            // Enviar el formulario
             fetch(contactForm.action, {
                 method: 'POST',
                 body: new FormData(contactForm),
@@ -80,6 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }).then(response => {
                 if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Error en el envío del formulario');
+                }
+            }).then(data => {
+                if (data.success === 'true') {
                     statusMessage.innerHTML = '<p>¡Mensaje enviado con éxito! Te contactaré pronto.</p>';
                     statusMessage.classList.remove('sending');
                     statusMessage.classList.add('success');
@@ -88,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error('Error en el envío del formulario');
                 }
             }).catch(error => {
+                console.error('Error:', error);
                 statusMessage.innerHTML = '<p>Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.</p>';
                 statusMessage.classList.remove('sending');
                 statusMessage.classList.add('error');
