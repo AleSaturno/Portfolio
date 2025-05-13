@@ -47,7 +47,7 @@ window.onscroll = () =>{
 //Funcion que logra descargar un CV
 document.getElementById('descargarCv').addEventListener('click', () => {
     let a = document.createElement('a');
-    a.href = 'https://drive.google.com/uc?export=download&id=1jXF_ro-3ECBt-sXIw8SAbqwSYUrcF294'; // La URL de tu CV
+    a.href = 'https://drive.google.com/uc?export=download&id=1jXF_ro-3ECBt-sXIw8SAbqwSYUrcF294';; // La URL de tu CV
     a.download = 'CV AlejandroSaturno.pdf'; // El nombre predeterminado para el archivo descargado
     document.body.appendChild(a);
     a.click();
@@ -117,3 +117,4 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Elementos del formulario no encontrados');
     }
 });
+
