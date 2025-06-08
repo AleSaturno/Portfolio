@@ -19,21 +19,54 @@
     <div class="contenedor-header">
       <header>
         <div class="logo">
-          <a href="#">Ale</a>
+          <a href="#inicio" aria-label="Inicio">
+            <span class="logo-texto">Ale</span>
+            <span class="logo-punto">.</span>
+          </a>
         </div>
-        <nav id="nav">
-          <ul>
-            <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
-            <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
-            <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
-            <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
-            <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO </a></li>
-            <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+        <button class="nav-responsive" aria-label="Menú" aria-expanded="false" onclick="mostrarOcultarMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav id="nav" class="nav-menu">
+          <ul class="menu-lista">
+            <li class="menu-item">
+              <a href="#inicio" class="nav-enlace" onclick="seleccionar()">
+                <span class="nav-texto">INICIO</span>
+                <span class="nav-indicador"></span>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#sobremi" class="nav-enlace" onclick="seleccionar()">
+                <span class="nav-texto">SOBRE MI</span>
+                <span class="nav-indicador"></span>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#skills" class="nav-enlace" onclick="seleccionar()">
+                <span class="nav-texto">SKILLS</span>
+                <span class="nav-indicador"></span>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#curriculum" class="nav-enlace" onclick="seleccionar()">
+                <span class="nav-texto">CURRICULUM</span>
+                <span class="nav-indicador"></span>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#portfolio" class="nav-enlace" onclick="seleccionar()">
+                <span class="nav-texto">PORTFOLIO</span>
+                <span class="nav-indicador"></span>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#contacto" class="nav-enlace" onclick="seleccionar()">
+                <span class="nav-texto">CONTACTO</span>
+                <span class="nav-indicador"></span>
+              </a>
+            </li>
           </ul>
         </nav>
-        <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-          <i class="fa-solid fa-bars"></i>
-        </div>
       </header>
     </div>
     <!-- SECCION INICIO -->
@@ -45,12 +78,6 @@
         <h1>Alejandro Saturno</h1>
         <h2>Desarrollador Front-End</h2>
         <div class="redes">
-          <a href="https://www.facebook.com/ale.saturno.1/" target="_blank"
-            ><i class="fa-brands fa-facebook-f"></i
-          ></a>
-          <a href="https://www.instagram.com/alesaturno64/" target="_blank"
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
           <a
             href="https://www.linkedin.com/in/alejandro-saturno-1b5967206/"
             target="_blank"
@@ -63,164 +90,175 @@
       </div>
     </section>
     <!-- SECCION SOBRE MI -->
-    <section id="sobremi" class="sobremi">
+    <section id="sobremi" class="sobremi" aria-labelledby="sobre-mi-titulo">
       <div class="contenido-seccion">
-        <h2>Sobre Mí</h2>
-        <p>
-          <span>Soy Alejandro Saturno,</span> desarrollador Front-End apasionado por crear experiencias web excepcionales. Domino tecnologías como React, Redux, JavaScript, HTML5, CSS3, Tailwind, NodeJs y Express. Mi compromiso con el aprendizaje continuo y la innovación me impulsa a mantenerme al día con las últimas tendencias del desarrollo web. Destaco por mi capacidad para colaborar eficazmente en equipos, comunicarme con claridad y adaptarme rápidamente a nuevos desafíos. Busco constantemente oportunidades para expandir mis habilidades y contribuir a proyectos impactantes. Mi objetivo es combinar excelencia técnica con una mentalidad de crecimiento para lograr resultados sobresalientes en cada proyecto.
+        <h2 id="sobre-mi-titulo">Sobre <span class="resaltar">Mí</span></h2>
+        <p class="descripcion">
+          <span class="resaltar">Soy Alejandro Saturno,</span> desarrollador Front-End apasionado por crear experiencias web excepcionales. Domino tecnologías como React, Redux, JavaScript, HTML5, CSS3, Tailwind, NodeJs y Express. Mi compromiso con el aprendizaje continuo y la innovación me impulsa a mantenerme al día con las últimas tendencias del desarrollo web. Destaco por mi capacidad para colaborar eficazmente en equipos, comunicarme con claridad y adaptarme rápidamente a nuevos desafíos.
         </p>
-      </div>
-
-      <div class="fila">
-        <!-- datos personales -->
-        <div class="col">
-          <h3>Datos Personales</h3>
-          <ul>
-            
-            <li>
-              <strong>Teléfono</strong>
-              +54 9 3516845660
-            </li>
-            <li>
-              <strong>Email</strong>
-              alesaturno64@gmail.com
-            </li>
-            <li>
-              <strong>Dirección</strong>
-              Córdoba, Argentina
-            </li>
-            <li>
-              <strong>Cargo</strong>
-              <span>FRONTEND</span>
-            </li>
-          </ul>
-        </div>
-        <!-- intereses -->
-        <div class="col">
-          <h3>Intereses</h3>
-          <div class="contenedor-intereses">
-            <div class="interes">
-              <i class="fa-solid fa-gamepad"></i>
-              <span>JUEGOS</span>
-            </div>
-            <div class="interes">
-              <i class="fa-solid fa-headphones"></i>
-              <span>MÚSICA</span>
-            </div>
-            <div class="interes">
-              <i class="fa-solid fa-bicycle"></i>
-              <span>CICLISMO</span>
-            </div>
-            <div class="interes">
-              <i class="fa-solid fa-computer"></i>
-              <span>DESARROLLO</span>
-            </div>
-            <div class="interes">
-              <i class="fa-solid fa-person-hiking"></i>
-              <span>DEPORTE</span>
-            </div>
-            <div class="interes">
-              <i class="fa-solid fa-book"></i>
-              <span>LECTURA</span>
-            </div>
+      
+        <div class="fila">
+          <!-- Datos Personales -->
+          <div class="col" data-aos="fade-right" data-aos-delay="100">
+            <h3>Datos Personales</h3>
+            <ul class="datos-personales">
+              <li class="dato-item">
+                <strong class="dato-titulo">Teléfono</strong>
+                <a href="tel:+5493516845660" class="dato-valor">+54 9 351 6845660</a>
+              </li>
+              <li class="dato-item">
+                <strong class="dato-titulo">Email</strong>
+                <a href="mailto:alesaturno64@gmail.com" class="dato-valor">alesaturno64@gmail.com</a>
+              </li>
+              <li class="dato-item">
+                <strong class="dato-titulo">Ubicación</strong>
+                <span class="dato-valor">Córdoba, Argentina</span>
+              </li>
+              <li class="dato-item">
+                <strong class="dato-titulo">Rol</strong>
+                <span class="dato-valor etiqueta destacado">FRONT-END</span>
+              </li>
+            </ul>
           </div>
-          <button id="descargarCv">
-            Descargar CV <i class="fa-solid fa-download"></i>
-            <span class="overlay"></span>
-          </button>
+          
+          <!-- Intereses -->
+          <div class="col" data-aos="fade-left" data-aos-delay="200">
+            <h3>Intereses</h3>
+            <div class="contenedor-intereses">
+              <div class="interes" tabindex="0" aria-label="Interés: Juegos">
+                <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+                <span>JUEGOS</span>
+              </div>
+              <div class="interes" tabindex="0" aria-label="Interés: Música">
+                <i class="fa-solid fa-headphones" aria-hidden="true"></i>
+                <span>MÚSICA</span>
+              </div>
+              <div class="interes" tabindex="0" aria-label="Interés: Ciclismo">
+                <i class="fa-solid fa-bicycle" aria-hidden="true"></i>
+                <span>CICLISMO</span>
+              </div>
+              <div class="interes" tabindex="0" aria-label="Interés: Desarrollo">
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
+                <span>DESARROLLO</span>
+              </div>
+              <div class="interes" tabindex="0" aria-label="Interés: Deporte">
+                <i class="fa-solid fa-dumbbell" aria-hidden="true"></i>
+                <span>DEPORTE</span>
+              </div>
+              <div class="interes" tabindex="0" aria-label="Interés: Lectura">
+                <i class="fa-solid fa-book" aria-hidden="true"></i>
+                <span>LECTURA</span>
+              </div>
+            </div>
+            <a id="descargarCv" class="btn-descargar" href="#" aria-label="Descargar CV">
+              DESCARGAR CV <i class="fas fa-download"></i>
+              <span class="ripple"></span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECCION SKILLS -->
+    <!-- SECCION HABILIDADES -->
     <section class="skills" id="skills">
       <div class="contenido-seccion">
         <h2>Skills</h2>
+        <p class="descripcion-seccion">Tecnologías y habilidades profesionales</p>
         <div class="fila">
-          <!-- Technical Skill -->
+          <!-- Habilidades Técnicas -->
           <div class="col">
-            <h3>Technical Skills</h3>
+            <h3><i class="fas fa-code"></i> Técnicas</h3>
             <div class="skill">
-              <span>JavaScript</span>
-              <div class="barra-skill">
-                <div class="progreso">
-                  <span>75%</span>
+              <div class="skill-info">
+                <i class="fab fa-js"></i>
+                <div>
+                  <h4>JavaScript</h4>
+                  <p>3+ años de experiencia</p>
                 </div>
               </div>
             </div>
             <div class="skill">
-              <span>HTML & CSS</span>
-              <div class="barra-skill">
-                <div class="progreso">
-                  <span>86%</span>
+              <div class="skill-info">
+                <i class="fab fa-react"></i>
+                <div>
+                  <h4>React & Redux</h4>
+                  <p>3+ años | 5+ aplicaciones desarrolladas</p>
                 </div>
               </div>
             </div>
             <div class="skill">
-              <span>React & Redux</span>
-              <div class="barra-skill">
-                <div class="progreso">
-                  <span>70%</span>
+              <div class="skill-info">
+                <i class="fab fa-node-js"></i>
+                <div>
+                  <h4>Node.js & Express</h4>
+                  <p>2+ años en desarrollo backend</p>
                 </div>
               </div>
             </div>
             <div class="skill">
-              <span>Node & Express</span>
-              <div class="barra-skill">
-                <div class="progreso">
-                  <span>70%</span>
+              <div class="skill-info">
+                <i class="fab fa-html5"></i>
+                <div>
+                  <h4>HTML5 & CSS3</h4>
+                  <p>Experiencia en diseño responsivo</p>
                 </div>
               </div>
             </div>
             <div class="skill">
-              <span>Tailwind CSS</span>
-              <div class="barra-skill">
-                <div class="progreso">
-                  <span>65%</span>
+              <div class="skill-info">
+                <i class="fas fa-paint-brush"></i>
+                <div>
+                  <h4>Tailwind CSS</h4>
+                  <p>Diseño ágil con utilidades</p>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Professional Skills -->
+          <!-- Habilidades Profesionales -->
           <div class="col">
-            <h3>Professional Skills</h3>
+            <h3><i class="fas fa-user-tie"></i> Profesionales</h3>
             <div class="skill">
-              <span>Comunicación</span>
-              <div class="barra-skill">
-                <div class="progreso">
-                  <span>80%</span>
+              <div class="skill-info">
+                <i class="fas fa-comments"></i>
+                <div>
+                  <h4>Comunicación</h4>
+                  <p>Clara y efectiva en equipos multidisciplinarios</p>
                 </div>
               </div>
             </div>
             <div class="skill">
-              <span>Trabajo en Equipo</span>
-              <div class="barra-skill">
-                <div class="progreso">
-                  <span>86%</span>
+              <div class="skill-info">
+                <i class="fas fa-users"></i>
+                <div>
+                  <h4>Trabajo en Equipo</h4>
+                  <p>Colaboración efectiva en metodologías ágiles</p>
                 </div>
               </div>
             </div>
             <div class="skill">
-              <span>Creatividad</span>
-              <div class="barra-skill">
-                <div class="progreso">
-                  <span>80%</span>
+              <div class="skill-info">
+                <i class="fas fa-lightbulb"></i>
+                <div>
+                  <h4>Creatividad</h4>
+                  <p>Soluciones innovadoras a problemas complejos</p>
                 </div>
               </div>
             </div>
             <div class="skill">
-              <span>Dedicación</span>
-              <div class="barra-skill">
-                <div class="progreso">
-                  <span>84%</span>
+              <div class="skill-info">
+                <i class="fas fa-bullseye"></i>
+                <div>
+                  <h4>Dedicación</h4>
+                  <p>Compromiso con los objetivos del proyecto</p>
                 </div>
               </div>
             </div>
             <div class="skill">
-              <span>Proactivo</span>
-              <div class="barra-skill">
-                <div class="progreso">
-                  <span>90%</span>
+              <div class="skill-info">
+                <i class="fas fa-rocket"></i>
+                <div>
+                  <h4>Proactividad</h4>
+                  <p>Iniciativa y mejora continua</p>
                 </div>
               </div>
             </div>
@@ -234,82 +272,129 @@
       <div class="contenido-seccion">
         <h2>Curriculum</h2>
         <div class="fila">
+          <!-- EDUCACIÓN -->
           <div class="col izquierda">
-            <h3>Educación</h3>
-            <div class="item izq">
-              <h4>Desarrollo Web Full Stack</h4>
+            <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
+
+            <div class="curriculum-card fade-in">
+              <div class="card-header">
+                <i class="fas fa-laptop-code card-icon"></i>
+                <h4>Desarrollo Web Full Stack</h4>
+              </div>
               <span class="casa">SoyHenry</span>
               <span class="fecha">2023</span>
-              <p>HTML5, CSS3, JavaScript,</p>
-              <p>React, Redux, Node, Express y PostgreSQL.</p>
-              <div class="conectori">
-                <div class="circuloi"></div>
+              <div class="badges">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">React</span>
+                <span class="badge">Redux</span>
+                <span class="badge">Node</span>
+                <span class="badge">Express</span>
+                <span class="badge">PostgreSQL</span>
               </div>
+              <!-- <a href="#" class="cert-link" target="_blank">Ver certificado</a> -->
             </div>
 
-            <div class="item izq">
-              <h4>Desarrollo Web y Sistemas(Cursos)</h4>
+            <div class="curriculum-card fade-in">
+              <div class="card-header">
+                <i class="fas fa-code card-icon"></i>
+                <h4>Desarrollo Web y Sistemas (Cursos)</h4>
+              </div>
               <span class="casa">Udemy</span>
               <span class="fecha">2021 - 2023</span>
-              <p>Python, React, Node,</p>
-              <p>AWS, Windows Server & Linux Server</p>
-              <div class="conectori">
-                <div class="circuloi"></div>
+              <div class="badges">
+                <span class="badge">Python</span>
+                <span class="badge">React</span>
+                <span class="badge">Node</span>
+                <span class="badge">AWS</span>
+                <span class="badge">Windows Server</span>
+                <span class="badge">Linux Server</span>
               </div>
+              <!-- <a href="#" class="cert-link" target="_blank">Ver certificado</a> -->
             </div>
-            <div class="item izq">
-              <h4>Desarrollo Web</h4>
+
+            <div class="curriculum-card fade-in">
+              <div class="card-header">
+                <i class="fas fa-globe card-icon"></i>
+                <h4>Desarrollo Web</h4>
+              </div>
               <span class="casa">CoderHouse</span>
               <span class="fecha">2021</span>
-              <p>JavaScript, Jquery, Ajax</p>
-              <div class="conectori">
-                <div class="circuloi"></div>
+              <div class="badges">
+                <span class="badge">JavaScript</span>
+                <span class="badge">Jquery</span>
+                <span class="badge">Ajax</span>
               </div>
+              <!-- <a href="#" class="cert-link" target="_blank">Ver certificado</a> -->
             </div>
 
-            <div class="item izq">
-              <h4>Desarrollo Web y Diseño</h4>
+            <div class="curriculum-card fade-in">
+              <div class="card-header">
+                <i class="fas fa-university card-icon"></i>
+                <h4>Desarrollo Web y Diseño</h4>
+              </div>
               <span class="casa">Universidad Tecnológica Nacional</span>
               <span class="fecha">2018 - 2021</span>
-              <p>Programación en Java</p>
-              <p>Desarrollo Web Responsive(HTML5, CSS3)</p>
-              <div class="conectori">
-                <div class="circuloi"></div>
+              <div class="badges">
+                <span class="badge">Java</span>
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">Responsive Web</span>
               </div>
+              <!-- <a href="#" class="cert-link" target="_blank">Ver certificado</a> -->
             </div>
-            
-            
           </div>
 
+          <!-- EXPERIENCIA DE TRABAJO -->
           <div class="col derecha">
-            <h3>Experiencia de trabajo</h3>
-            <div class="item der">
-              <h4>Front Developer</h4>
+            <h3><i class="fas fa-briefcase"></i> Experiencia de trabajo</h3>
+
+            <div class="curriculum-card fade-in">
+              <div class="card-header">
+                <i class="fas fa-code card-icon"></i>
+                <h4>Front Developer</h4>
+              </div>
               <span class="casa">CloudMax Argentina</span>
               <span class="fecha">2024</span>
-              <p>Análisis, diseño y desarrollo de páginas webs.</p>
-              <div class="conectord">
-                <div class="circulod"></div>
+              <div class="badges">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">React</span>
               </div>
+              <p>Análisis, diseño y desarrollo de páginas webs.</p>
             </div>
-            <div class="item der">
-              <h4>Front Developer</h4>
+
+            <div class="curriculum-card fade-in">
+              <div class="card-header">
+                <i class="fas fa-code card-icon"></i>
+                <h4>Front Developer</h4>
+              </div>
               <span class="casa">Media Orange</span>
               <span class="fecha">2024</span>
-              <p>Análisis, diseño y desarrollo de páginas webs.
-                Creación y envios de correos en HubSpot.</p>
-              <div class="conectord">
-                <div class="circulod"></div>
+              <div class="badges">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">HubSpot</span>
               </div>
+              <p>Análisis, diseño y desarrollo de páginas webs. Creación y envíos de correos en HubSpot.</p>
             </div>
-            <div class="item der">
-              <h4>Servicio Técnico IT</h4>
+
+            <div class="curriculum-card fade-in">
+              <div class="card-header">
+                <i class="fas fa-server card-icon"></i>
+                <h4>Servicio Técnico IT</h4>
+              </div>
               <span class="casa">CloudMax Argentina</span>
               <span class="fecha">2018 - 2022</span>
-              <p>Instalación y Mantenimiento de Servidores.</p>
-              <div class="conectord">
-                <div class="circulod"></div>
+              <div class="badges">
+                <span class="badge">Windows Server</span>
+                <span class="badge">Linux Server</span>
+                <span class="badge">Networking</span>
               </div>
+              <p>Instalación y Mantenimiento de Servidores.</p>
             </div>
           </div>
         </div>
@@ -320,47 +405,129 @@
     <section id="portfolio" class="portfolio">
       <div class="contenido-seccion">
         <h2>PORTFOLIO</h2>
+        <!-- Puedes pasarme los links de GitHub o YouTube de tus proyectos y los agrego debajo de cada botón -->
         <div class="galeria">
-          <div class="proyecto">
-            <img src="img/imagen1.jpg" alt=""/>
-            <div class="overlay">
-              <h3>Login de Soda Stereo</h3>
-              <p>Primer Login</p>
+          <!-- Proyecto 6 (2024) -->
+          <div class="proyecto-card fade-in">
+            <div class="proyecto-img">
+              <img src="img/imagen6.jpg" alt="Creación de tareas" />
             </div>
-          </div>
-          <div class="proyecto">
-            <img src="img/imagen2.jpg" alt="" />
-            <div class="overlay">
-              <h3>Soda Stereo</h3>
-              <p>Primera página</p>
-            </div>
-          </div>
-          <div class="proyecto">
-            <img src="img/imagen3.png" alt="" />
-            <div class="overlay">
-              <h3>VIDEOGAMES</h3>
-              <p>App de videojuegos</p>
-            </div>
-          </div>
-          <div class="proyecto">
-            <img src="img/imagen4.png" alt="" />
-            <div class="overlay">
-              <h3>LaPilcha</h3>
-              <p>E-Commerce</p>
-            </div>
-          </div>
-          <div class="proyecto">
-            <img src="img/imagen5.jpg" alt="" />
-            <div class="overlay">
-              <h3>Formulario</h3>
-              <p>Encuesta</p>
-            </div>
-          </div>
-          <div class="proyecto">
-            <img src="img/imagen6.jpg" alt="" />
-            <div class="overlay">
+            <div class="proyecto-content">
               <h3>Creación de tareas</h3>
-              <p>Aplicación FullStack</p>
+              <span class="proyecto-ano">2024</span>
+              <div class="badges">
+                <span class="badge">React</span>
+                <span class="badge">Node</span>
+                <span class="badge">Express</span>
+                <span class="badge">MongoDB</span>
+              </div>
+              <p class="proyecto-desc">App FullStack para gestión de tareas.</p>
+              <div class="proyecto-links">
+                <a class="btn-proyecto" href="https://github.com/AleSaturno/ProjectVite" target="_blank"><i class="fab fa-github"></i> Código</a>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 3 (2023) -->
+          <div class="proyecto-card fade-in">
+            <div class="proyecto-img">
+              <img src="img/imagen3.png" alt="VIDEOGAMES" />
+            </div>
+            <div class="proyecto-content">
+              <h3>VIDEOGAMES</h3>
+              <span class="proyecto-ano">2023</span>
+              <div class="badges">
+                <span class="badge">React</span>
+                <span class="badge">Redux</span>
+                <span class="badge">Node</span>
+                <span class="badge">Express</span>
+                <span class="badge">PostgreSQL</span>
+              </div>
+              <p class="proyecto-desc">App para buscar, filtrar y crear videojuegos.</p>
+              <div class="proyecto-links">
+                <a class="btn-proyecto" href="https://github.com/AleSaturno/PI-VideoGame" target="_blank"><i class="fab fa-github"></i> Código</a>
+                <a class="btn-proyecto" href="https://youtu.be/oKCVv36kYUk" target="_blank"><i class="fab fa-youtube"></i> Video</a>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 4 (2023) -->
+          <div class="proyecto-card fade-in">
+            <div class="proyecto-img">
+              <img src="img/imagen4.png" alt="LaPilcha" />
+            </div>
+            <div class="proyecto-content">
+              <h3>LaPilcha</h3>
+              <span class="proyecto-ano">2023</span>
+              <div class="badges">
+                <span class="badge">Nextjs13</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">React</span>
+                <span class="badge">Redux-toolkit</span>
+                <span class="badge">Express</span>
+                <span class="badge">MongoDB</span>
+              </div>
+              <p class="proyecto-desc">E-Commerce de ropa, proyecto grupal.</p>
+              <div class="proyecto-links">
+                <a class="btn-proyecto" href="https://github.com/AleSaturno/LaPilchaPF" target="_blank"><i class="fab fa-github"></i> Código</a>
+                <a class="btn-proyecto" href="https://youtu.be/TMuOQmZbJUs" target="_blank"><i class="fab fa-youtube"></i> Video</a>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 5 (2023) -->
+          <div class="proyecto-card fade-in">
+            <div class="proyecto-img">
+              <img src="img/imagen5.jpg" alt="Formulario" />
+            </div>
+            <div class="proyecto-content">
+              <h3>Formulario</h3>
+              <span class="proyecto-ano">2023</span>
+              <div class="badges">
+                <span class="badge">React</span>
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">JavaScript</span>
+              </div>
+              <p class="proyecto-desc">Formulario de encuesta simple.</p>
+              <div class="proyecto-links">
+                <a class="btn-proyecto" href="https://github.com/AleSaturno/Cuestionario-React" target="_blank"><i class="fab fa-github"></i> Código</a>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 1 (2021) -->
+          <div class="proyecto-card fade-in">
+            <div class="proyecto-img">
+              <img src="img/imagen1.jpg" alt="Login de Soda Stereo" />
+            </div>
+            <div class="proyecto-content">
+              <h3>Login de Soda Stereo</h3>
+              <span class="proyecto-ano">2021</span>
+              <div class="badges">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">JavaScript</span>
+              </div>
+              <p class="proyecto-desc">Primer Login de usuario para fans de Soda Stereo.</p>
+              <div class="proyecto-links">
+                <a class="btn-proyecto" href="https://github.com/AleSaturno/Soda-Stereo" target="_blank"><i class="fab fa-github"></i> Código</a>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 2 (2021) -->
+          <div class="proyecto-card fade-in">
+            <div class="proyecto-img">
+              <img src="img/imagen2.jpg" alt="Soda Stereo" />
+            </div>
+            <div class="proyecto-content">
+              <h3>Soda Stereo</h3>
+              <span class="proyecto-ano">2021</span>
+              <div class="badges">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+              </div>
+              <p class="proyecto-desc">Primera página tributo a Soda Stereo.</p>
+              <div class="proyecto-links">
+                <a class="btn-proyecto" href="https://github.com/AleSaturno/Soda-Stereo" target="_blank"><i class="fab fa-github"></i> Código</a>
+                <!-- <a class="btn-proyecto" href="#" target="_blank"><i class="fab fa-youtube"></i> Video</a> -->
+              </div>
             </div>
           </div>
         </div>
@@ -372,71 +539,58 @@
         <h2>CONTACTO</h2>
     <div class="fila">
       <div class="col">
-        <form id="contactForm" action="https://formsubmit.co/ajax/alesaturno64@gmail.com" method="POST">
-          <input type="text" name="Nombre" placeholder="Tu Nombre" required />
-          <input type="text" name="Asunto" placeholder="Asunto" required />
-          <input type="email" name="Email" placeholder="Dirección de correo" required />
-          <input type="text" name="Telefono" placeholder="Número telefónico" required />
-          <textarea name="Mensaje" cols="30" rows="10" placeholder="Mensaje" required></textarea>
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_html" value="PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVzIj4KPGhlYWQ+CiAgICA8bWV0YSBjaGFyc2V0PSJVVEYtOCI+CiAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCI+CiAgICA8dGl0bGU+TnVldm8gbWVuc2FqZSBkZSBjb250YWN0bzwvdGl0bGU+CjwvaGVhZD4KPGJvZHkgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbCwgc2Fucy1zZXJpZjsgbGluZS1oZWlnaHQ6IDEuNjsgY29sb3I6ICMzMzM7IGJhY2tncm91bmQtY29sb3I6ICNmNGY0ZjQ7IG1hcmdpbjogMDsgcGFkZGluZzogMjBweDsiPgogICAgPGRpdiBzdHlsZT0ibWF4LXdpZHRoOiA2MDBweDsgbWFyZ2luOiAwIGF1dG87IGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7IHBhZGRpbmc6IDIwcHg7IGJvcmRlci1yYWRpdXM6IDVweDsgYm94LXNoYWRvdzogMCAwIDEwcHggcmdiYSgwLDAsMCwwLjEpOyI+CiAgICAgICAgPGgxIHN0eWxlPSJjb2xvcjogIzFDQjY5ODsgYm9yZGVyLWJvdHRvbTogMnB4IHNvbGlkICMxQ0I2OTg7IHBhZGRpbmctYm90dG9tOiAxMHB4OyI+TnVldm8gbWVuc2FqZSBkZSBjb250YWN0bzwvaDE+CiAgICAgICAgCiAgICAgICAgPGRpdiBzdHlsZT0ibWFyZ2luLWJvdHRvbTogMjBweDsiPgogICAgICAgICAgICA8cCBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7IGNvbG9yOiAjMUNCNjk4OyBtYXJnaW4tYm90dG9tOiA1cHg7Ij5Ob21icmU6PC9wPgogICAgICAgICAgICA8cCBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogI2Y5ZjlmOTsgcGFkZGluZzogMTBweDsgYm9yZGVyLXJhZGl1czogM3B4OyBtYXJnaW4tdG9wOiAwOyI+e3tuYW1lfX08L3A+CiAgICAgICAgPC9kaXY+CiAgICAgICAgCiAgICAgICAgPGRpdiBzdHlsZT0ibWFyZ2luLWJvdHRvbTogMjBweDsiPgogICAgICAgICAgICA8cCBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7IGNvbG9yOiAjMUNCNjk4OyBtYXJnaW4tYm90dG9tOiA1cHg7Ij5FbWFpbDo8L3A+CiAgICAgICAgICAgIDxwIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiAjZjlmOWY5OyBwYWRkaW5nOiAxMHB4OyBib3JkZXItcmFkaXVzOiAzcHg7IG1hcmdpbi10b3A6IDA7Ij57e2VtYWlsfX08L3A+CiAgICAgICAgPC9kaXY+CiAgICAgICAgCiAgICAgICAgPGRpdiBzdHlsZT0ibWFyZ2luLWJvdHRvbTogMjBweDsiPgogICAgICAgICAgICA8cCBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7IGNvbG9yOiAjMUNCNjk4OyBtYXJnaW4tYm90dG9tOiA1cHg7Ij5UZWzDqWZvbm86PC9wPgogICAgICAgICAgICA8cCBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogI2Y5ZjlmOTsgcGFkZGluZzogMTBweDsgYm9yZGVyLXJhZGl1czogM3B4OyBtYXJnaW4tdG9wOiAwOyI+e3twaG9uZX19PC9wPgogICAgICAgIDwvZGl2PgogICAgICAgIAogICAgICAgIDxkaXYgc3R5bGU9Im1hcmdpbi1ib3R0b206IDIwcHg7Ij4KICAgICAgICAgICAgPHAgc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyBjb2xvcjogIzFDQjY5ODsgbWFyZ2luLWJvdHRvbTogNXB4OyI+VGVtYTo8L3A+CiAgICAgICAgICAgIDxwIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiAjZjlmOWY5OyBwYWRkaW5nOiAxMHB4OyBib3JkZXItcmFkaXVzOiAzcHg7IG1hcmdpbi10b3A6IDA7Ij57e3N1YmplY3R9fTwvcD4KICAgICAgICA8L2Rpdj4KICAgICAgICAKICAgICAgICA8ZGl2IHN0eWxlPSJtYXJnaW4tYm90dG9tOiAyMHB4OyI+CiAgICAgICAgICAgIDxwIHN0eWxlPSJmb250LXdlaWdodDogYm9sZDsgY29sb3I6ICMxQ0I2OTg7IG1hcmdpbi1ib3R0b206IDVweDsiPk1lbnNhamU6PC9wPgogICAgICAgICAgICA8cCBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogI2Y5ZjlmOTsgcGFkZGluZzogMTBweDsgYm9yZGVyLXJhZGl1czogM3B4OyBtYXJnaW4tdG9wOiAwOyI+e3ttZXNzYWdlfX08L3A+CiAgICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KPC9ib2R5Pgo8L2h0bWw+">
-          <button type="submit">Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
-            <samp class="overlay"></samp>
-          
-          </button>
-        </form>
+        <form id="contactForm" class="contact-form fade-in" action="https://formsubmit.co/ajax/alesaturno64@gmail.com" method="POST" autocomplete="off" novalidate>
+  <div class="form-group">
+    <label for="nombre">Nombre <span class="required">*</span></label>
+    <input type="text" id="nombre" name="Nombre" placeholder="Tu Nombre" required />
+  </div>
+  <div class="form-group">
+    <label for="asunto">Asunto <span class="required">*</span></label>
+    <input type="text" id="asunto" name="Asunto" placeholder="Asunto" required />
+  </div>
+  <div class="form-group">
+    <label for="email">Correo Electrónico <span class="required">*</span></label>
+    <input type="email" id="email" name="Email" placeholder="ejemplo@email.com" required />
+  </div>
+  <div class="form-group">
+    <label for="telefono">Teléfono <span class="required">*</span></label>
+    <input type="text" id="telefono" name="Telefono" placeholder="Número telefónico" required />
+  </div>
+  <div class="form-group">
+    <label for="mensaje">Mensaje <span class="required">*</span></label>
+    <textarea id="mensaje" name="Mensaje" cols="30" rows="7" placeholder="Escribe tu mensaje aquí..." required></textarea>
+  </div>
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  <button type="submit" class="btn-enviar">
+    <span class="btn-text">Enviar Mensaje</span>
+    <i class="fa-solid fa-paper-plane"></i>
+    <span class="btn-loader" style="display:none;"></span>
+    <span class="overlay"></span>
+  </button>
+</form>
             <div id="statusMessage" class="hidden">
               <p></p>
-            </div>
-          </div>
-          <!-- Mapa -->
-          <div class="col">
-            <img src="img/ubicacion.png" alt="">
-            <div class="info">
-              <ul>
-                <li>
-                  <i class="fa-solid fa-location-dot"></i>
-                  Antonio Arcos 2641, Cordoba Arg
-                </li>
-                <li>
-                  <i class="fa-solid fa-mobile-screen"></i>
-                 Llamanos: +54 9 3516845660
-                </li>
-                <li>
-                  <i class="fa-solid fa-envelope"></i>
-                  Email: alesaturno64@gmail.com
-                </li>
-              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- SECCION FOOTER -->
+      <!-- SECCION FOOTER -->
     <footer>
-      <a href="#inicio" class="arriba">
+      <a href="#inicio" class="arriba" aria-label="Volver al inicio">
         <i class="fa-solid fa-angles-up"></i>
       </a>
       <div class="redes">
-        <a href="https://www.facebook.com/ale.saturno.1/" target="_blank"
-          ><i class="fa-brands fa-facebook-f"></i
-        ></a>
-        <a href="https://www.instagram.com/alesaturno64/" target="_blank"
-          ><i class="fa-brands fa-instagram"></i
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/alejandro-saturno-1b5967206/"
-          target="_blank"
-          ><i class="fa-brands fa-linkedin-in"></i
-        ></a>
-        <a href="https://github.com/AleSaturno" target="_blank"
-          ><i class="fa-brands fa-github"></i
-        ></a>
+        <a href="https://www.linkedin.com/in/alejandro-saturno-1b5967206/" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/AleSaturno" target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
       </div>
+      <p class="copyright">© 2025 Alejandro Saturno. Todos los derechos reservados.</p>
     </footer>
-
-    </section>
     <script src="index.js"></script>
   </body>
 </html>
