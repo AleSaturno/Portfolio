@@ -71,6 +71,71 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactFormEl && submitButton) {
         contactFormEl.addEventListener('submit', function(e) {
             e.preventDefault();
+            // Validaciones
+            const nombre = contactFormEl.querySelector('#nombre').value.trim();
+            const asunto = contactFormEl.querySelector('#asunto').value.trim();
+            const email = contactFormEl.querySelector('#email').value.trim();
+            const telefono = contactFormEl.querySelector('#telefono').value.trim();
+            const mensaje = contactFormEl.querySelector('#mensaje').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Limpiar errores previos
+            contactFormEl.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
+
+            if (!nombre || !asunto || !email || !telefono || !mensaje) {
+                if (!nombre) contactFormEl.querySelector('#nombre').classList.add('input-error');
+                if (!asunto) contactFormEl.querySelector('#asunto').classList.add('input-error');
+                if (!email) contactFormEl.querySelector('#email').classList.add('input-error');
+                if (!telefono) contactFormEl.querySelector('#telefono').classList.add('input-error');
+                if (!mensaje) contactFormEl.querySelector('#mensaje').classList.add('input-error');
+                statusMessage.innerHTML = '<p>Por favor, completa todos los campos obligatorios.</p>';
+                statusMessage.classList.remove('hidden', 'success', 'sending');
+                statusMessage.classList.add('error');
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>';
+                setTimeout(() => { statusMessage.classList.add('hidden'); }, 4000);
+                return;
+            }
+            if (!/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]{3,}$/.test(nombre)) {
+                contactFormEl.querySelector('#nombre').classList.add('input-error');
+                statusMessage.innerHTML = '<p>El nombre debe tener al menos 3 letras y solo puede contener letras y espacios.</p>';
+                statusMessage.classList.remove('hidden', 'success', 'sending');
+                statusMessage.classList.add('error');
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>';
+                setTimeout(() => { statusMessage.classList.add('hidden'); }, 4000);
+                return;
+            }
+            if (asunto.length < 4) {
+                contactFormEl.querySelector('#asunto').classList.add('input-error');
+                statusMessage.innerHTML = '<p>El asunto debe tener al menos 4 caracteres.</p>';
+                statusMessage.classList.remove('hidden', 'success', 'sending');
+                statusMessage.classList.add('error');
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>';
+                setTimeout(() => { statusMessage.classList.add('hidden'); }, 4000);
+                return;
+            }
+            if (!emailRegex.test(email)) {
+                contactFormEl.querySelector('#email').classList.add('input-error');
+                statusMessage.innerHTML = '<p>Por favor, ingresa un correo electrónico válido.</p>';
+                statusMessage.classList.remove('hidden', 'success', 'sending');
+                statusMessage.classList.add('error');
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>';
+                setTimeout(() => { statusMessage.classList.add('hidden'); }, 4000);
+                return;
+            }
+            if (mensaje.length < 10) {
+                contactFormEl.querySelector('#mensaje').classList.add('input-error');
+                statusMessage.innerHTML = '<p>El mensaje debe tener al menos 10 caracteres.</p>';
+                statusMessage.classList.remove('hidden', 'success', 'sending');
+                statusMessage.classList.add('error');
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>';
+                setTimeout(() => { statusMessage.classList.add('hidden'); }, 4000);
+                return;
+            }
             submitButton.disabled = true;
             submitButton.innerHTML = 'Enviando... <i class="fa-solid fa-spinner fa-spin"></i>';
             statusMessage.innerHTML = '<p>Enviando mensaje, por favor espere...</p>';

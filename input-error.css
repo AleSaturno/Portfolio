@@ -1,0 +1,23 @@
+/* Estilos visuales extra para campos con error en el formulario de contacto */
+.input-error {
+    border: 2px solid #ff6b6b !important;
+    background: rgba(255,107,107,0.07);
+    transition: border 0.25s, background 0.25s;
+    box-shadow: 0 0 0 2px rgba(255,107,107,0.08);
+}
+
+.input-error:focus {
+    outline: none;
+    border-color: #ff3b3b;
+    background: rgba(255,107,107,0.13);
+}
+
+/* Mejora la visibilidad de mensajes de error del formulario */
+#statusMessage.error {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: 2px solid #ff3b3b;
+    box-shadow: 0 2px 12px rgba(255, 107, 107, 0.18);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
