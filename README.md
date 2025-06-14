@@ -35,7 +35,10 @@ Portfolio/
 
 ## 🌐 Despliegue
 
-El sitio está desplegado en [Vercel](https://vercel.com/).
+Este proyecto puede ser desplegado en cualquier servicio de hosting estático como:
+- [Vercel](https://vercel.com/)
+- [Netlify](https://www.netlify.com/)
+- [GitHub Pages](https://pages.github.com/)
 
 ## 🚀 Cómo Ejecutar Localmente
 
