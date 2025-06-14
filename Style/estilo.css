@@ -619,7 +619,6 @@ html{
 
 @media screen and (max-width: 600px) {
   .sobremi .fila .col ul li a {
-    max-width: 150px;
     font-size: 0.97rem;
   }
 }
